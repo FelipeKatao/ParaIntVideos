@@ -1,0 +1,27 @@
+.banner{
+    display: flex;
+    margin: auto;
+    background-color: black;
+    opacity: 0.9;
+    height: 70vh;
+    width: 150vh;
+    margin-top: 9vh;
+}
+.banner h1{
+    color: white;
+    margin-top: 4vh;
+    margin-left: 40vh;
+}
+.AnimateSquare{
+    height: 20vh;
+    width: 20vh;
+    background-color: green;
+    margin-left: 4vh;
+}
+.container-square{
+    display: flex;
+    background-color: blue;
+    margin: auto;
+    margin-left: -80vh;
+
+}
