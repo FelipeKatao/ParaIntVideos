@@ -20,8 +20,6 @@
 }
 .container-square{
     display: flex;
-    background-color: blue;
     margin: auto;
     margin-left: -80vh;
-
 }
