@@ -6,6 +6,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <div>
+          Vamos começar a mexer nessa API
+        </div>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
