@@ -1,6 +1,11 @@
+import React, { useState } from 'react'
+import ReactDOM from 'react-dom'
+import VideoPage from '../components/VideoPage.js'
+
+var testeGlobal="false"
 function Api_get(SearchVideo){
     let api
-    fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&q='+SearchVideo+'&type=video&videoCaption=closedCaption&key=AIzaSyAIHDT4EUZNz6E30hNhBOeUr2V5MH9G6UI')
+    fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&q='+SearchVideo+'&type=video&videoCaption=closedCaption&key=AIzaSyCUz9yK2MHijtZam4oJ5H3Q2s5V9ehirng')
     .then((resp) => resp.json())
     .then(function(data){
         console.log(data)
@@ -16,6 +21,11 @@ function Api_get(SearchVideo){
 }
 
 function teste(e){
-   Api_get(document.getElementById("input_search").value)
+  // Api_get(document.getElementById("input_search").value)
+  //testeGlobal=true
+  console.log(console.log(document.getElementById("1").id))
+  document.getElementById("1").id="0"
 }
+
+
 export default teste
