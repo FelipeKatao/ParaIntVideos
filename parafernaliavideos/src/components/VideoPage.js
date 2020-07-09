@@ -8,12 +8,12 @@ function VideoPage(){
         <>
         <div className="VideosCon">
             <h1>Resultados</h1>
-            <MiniThumbs titulo="Titulo do Video" Descricao="Descrição do video se encontra aqui" uploadDate="04/05/2020"></MiniThumbs>
-            <MiniThumbs titulo="Musica legal" Descricao="Descrição do video se encontra aqui" uploadDate="04/05/2020"></MiniThumbs>
-            <MiniThumbs titulo="Documentario completo" Descricao="Descrição do video se encontra aqui" uploadDate="04/05/2020"></MiniThumbs>
+            <MiniThumbs linkImg="" titulo="Titulo do Video" Descricao="Descrição do video se encontra aqui" uploadDate="04/05/2020" linkVideo=""></MiniThumbs>
+            <MiniThumbs linkImg="" titulo="Musica legal" Descricao="Descrição do video se encontra aqui" uploadDate="04/05/2020" linkVideo=""></MiniThumbs>
+            <MiniThumbs linkImg="" titulo="Documentario completo" Descricao="Descrição do video se encontra aqui" uploadDate="04/05/2020" linkVideo=""></MiniThumbs>
         </div>
         <div className="VideoPlayer">
-            Videos
+            
         </div>
         </>
     )
