@@ -9,6 +9,7 @@ function VideoPage(){
         <div className="VideosCon">
             <h1>Resultados</h1>
             <MiniThumbs></MiniThumbs>
+            <MiniThumbs></MiniThumbs>
         </div>
         <div className="VideoPlayer">
             Videos

@@ -4,7 +4,7 @@ import '../css/Player.css'
 function MiniThumbs(){
     return(
         <>
-        <div className="card mb-2" id="teste">
+        <div className="card mb-2 miniPlayer">
             <div className="row no-gutters">
                 <div className="col-md-4">
                     <img src="https://i.ytimg.com/vi/0tcDXJfAFVw/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLAt8ga__wclzadNe5hZaPPFJ9xq5g" className="card-img"></img>

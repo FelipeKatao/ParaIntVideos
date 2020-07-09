@@ -4,6 +4,7 @@
     margin-top: 2vh;
     height: 80vh;
     width: 70vh;
+    overflow-x: auto;
 }
 .VideoPlayer{
     float: right;
@@ -13,9 +14,18 @@
     height: 60vh;
     background-color: black;
 }
+.miniPlayer{
+    top:9vh;
+}
 .content-style{
     float: left;
     margin-top: -8vh;
     padding: 1vh;
     padding-left: 2vh;
+}
+.VideosCon h1{
+    z-index: 99;
+    background-color: white;
+    width: 100%;
+    position: fixed;
 }
