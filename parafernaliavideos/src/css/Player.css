@@ -1,0 +1,21 @@
+.VideosCon{
+    float: left;
+    margin-left: 6vh;
+    margin-top: 2vh;
+    height: 80vh;
+    width: 70vh;
+}
+.VideoPlayer{
+    float: right;
+    margin-right: 20vh;
+    margin-top: 10vh;
+    width: 90vh;
+    height: 60vh;
+    background-color: black;
+}
+.content-style{
+    float: left;
+    margin-top: -8vh;
+    padding: 1vh;
+    padding-left: 2vh;
+}
