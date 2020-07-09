@@ -1,7 +1,10 @@
-import React from "react"
+import React,{useState} from "react"
 import '../css/Player.css'
 
-function MiniThumbs(){
+function MiniThumbs(props){
+    const [ tituloClip, setTitulo ] =useState(props.titulo)
+    const [ Descricao, setDes ] = useState(props.Descricao)
+    const [ uploadDate, setDate] = useState(props.uploadDate)
     return(
         <>
         <div className="card mb-2 miniPlayer">
@@ -11,9 +14,9 @@ function MiniThumbs(){
                 </div>
                 <div className="col-md-8 content-style">
                     <div className="card-body"></div>
-                    <h5 className="card-body">Titulo do video</h5>
-                    <p className="card-text">Descrição do video se encontra aqui</p>
-                    <p className="card-text"><small className="text-muted">Upload in 08/08/2019</small></p>
+                    <h5 className="card-body">{tituloClip}</h5>
+                    <p className="card-text">{Descricao}</p>
+                    <p className="card-text"><small className="text-muted">{uploadDate}</small></p>
                 </div>
             </div>
         </div>
