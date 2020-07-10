@@ -20,12 +20,8 @@ function Api_get(SearchVideo){
     return api
 }
 
-function teste(e){
-  // Api_get(document.getElementById("input_search").value)
-  //testeGlobal=true
-  console.log(console.log(document.getElementById("1").id))
-  document.getElementById("1").id="0"
+function callApiYoutube(valor){
+  Api_get(valor)
 }
 
-
-export default teste
+export default callApiYoutube

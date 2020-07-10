@@ -1,30 +1,56 @@
 import React, { useState,useEffect } from 'react'
 import MiniThumbs from "./MiniThumbs.js"
-import teste from '../js/ApiYoutube.js'
 import '../css/Player.css'
 
-function VideoPage(){
-    const [videos,setVideo] = useState([
-        {id:1 , titulo:"Titulo do Video",descri:"Descrição do video se encontra aqui",update:"04/05/2020",link:""},
-        {id:2 , titulo:"Musica legal",descri:"Descrição do video se encontra aqui",update:"04/05/2020",link:""},
-        {id:3 , titulo:"Documentario completo",descri:"Descrição do video se encontra aqui",update:"04/05/2020",link:""}]
-        )
-    useEffect(() =>{
-        console.log("funciona?")
-        teste.testeGlobal=true
-    },[])
+function VideoPage(props){
+    const [ tituloClip, setTitulo ] =useState(props.titulo)
+    const [ Descricao, setDes ] = useState(props.Descricao)
+    const [ uploadDate, setDate] = useState(props.uploadDate)
+    const [ VidUrl,setUrl] = useState()
+    const [ search, setSearch ] =useState(window.location.href.replace("http://localhost:3000/videoPage/",""))
+    const [videos,setVideo] = useState([])
+        useEffect( async()=>{ 
+            setSearch(window.location.href)
+            console.log(search)
+            const response = await fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&q='+search+'&type=video&videoCaption=closedCaption&key=AIzaSyCUz9yK2MHijtZam4oJ5H3Q2s5V9ehirng')
+            const data = await response.json()
+            for (let index = 0; index < data["items"].length; index++) { 
+                setDes(data["items"][index]["snippet"]["description"])
+                setDate(data["items"][index]["snippet"]["publishTime"])
+                setTitulo(data["items"][index]["snippet"]["title"])
+                setUrl(data["items"][index]["snippet"]["thumbnails"]["default"]["url"])
+                HandleVideos()
+            }
+            console.log(videos)
+        },[])
+        useEffect(() =>{
+            setSearch(window.location.href.replace("http://localhost:3000/videoPage/",""))
+            fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&q='+search+'&type=video&videoCaption=closedCaption&key=AIzaSyCUz9yK2MHijtZam4oJ5H3Q2s5V9ehirng')
+            .then((resp) => resp.json())
+            .then(function(data){
+                console.log(data)
+                for (let index = 0; index < data["items"].length; index++) {
+                    setDes(data["items"][index]["snippet"]["description"])
+                    setDate(data["items"][index]["snippet"]["publishTime"])
+                    setTitulo(data["items"][index]["snippet"]["title"])
+                    setUrl(data["items"][index]["snippet"]["thumbnails"]["default"]["url"])
+                    HandleVideos()
+                }
+            })
+           
+        },[window.location.href])
     function HandleVideos(){
-        setVideo([...videos,{id:Math.random(),titulo:"new video",descri:"novo video no canal",update:"29/06/2020"}])
+        setVideo([...videos,{id:Math.random(),titulo:tituloClip,descri:Descricao,update:uploadDate,imgLink:VidUrl}])
     }
 
     return(
         <>
         <div className="VideosCon" id="displayData">
             <h1>Resultados</h1>
-            {
+            { 
                 videos.map(repo => 
-                    <MiniThumbs key={repo.id} titulo={repo.titulo} Descricao={repo.descri} uploadDate={repo.update}></MiniThumbs>
-                    )
+                <MiniThumbs key={repo.id} titulo={repo.titulo} Descricao={repo.descri} uploadDate={repo.update} thumb={repo.imgLink}></MiniThumbs>
+                )
             }
         </div>
         <div className="VideoPlayer">
